@@ -1,4 +1,4 @@
-package ui;
+ package ui;
 
 
 import javafx.application.Application;
@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import model.ClassRoom;
 
 public class Main extends Application{
+	
+	//Relationship.
 	
 	private ClassRoomGUI classroomgui;
 	private ClassRoom classroom;

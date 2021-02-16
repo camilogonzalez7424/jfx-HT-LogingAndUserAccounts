@@ -22,12 +22,18 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" onAction="#SignUp" text="Sign up" GridPane.rowIndex="3">
+      <Button mnemonicParsing="false" onAction="#SignUp" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: #33FFF0;" text="Sign up" textFill="WHITE" GridPane.rowIndex="3">
          <GridPane.margin>
-            <Insets left="133.0" />
+            <Insets left="120.0" />
          </GridPane.margin>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
       </Button>
-      <Button mnemonicParsing="false" onAction="#LogIn" text="Log in" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#LogIn" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: #33FFF0;" text="Log in" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
       <Label text="Sign in to Classroom" textAlignment="CENTER" GridPane.columnIndex="1">
          <font>
             <Font name="System Bold Italic" size="17.0" />
@@ -49,7 +55,7 @@
             <Insets left="50.0" />
          </GridPane.margin>
       </Label>
-      <TextField fx:id="txtLoginUser" prefWidth="277.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TextField fx:id="txtLoginPass" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="txtLoginUser" prefWidth="277.0" style="-fx-border-color: #33FFF0;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="txtLoginPass" style="-fx-border-color: #33FFF0;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    </children>
 </GridPane>

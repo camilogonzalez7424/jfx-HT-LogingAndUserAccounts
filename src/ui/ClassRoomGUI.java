@@ -29,6 +29,8 @@ import model.ClassRoom;
 import model.UserAccount;
 
 public class ClassRoomGUI {
+	
+	//Attributes.
 
 	 	@FXML
 	    private Pane mainPane;
@@ -107,6 +109,8 @@ public class ClassRoomGUI {
 	    
 	    private ClassRoom classroom;
 	    
+	    //Constructor. 
+	    
 	 public ClassRoomGUI(ClassRoom cr) {
 		 classroom = cr;
 	 }
@@ -115,9 +119,19 @@ public class ClassRoomGUI {
 		 return mainPane;
 	 }
 	 
+	 //Methods.
+	 
 	 @FXML
 	    public void LogIn(ActionEvent event) throws IOException{
-		 if(classroom.access(txtLoginUser.getText(),txtLoginPass.getText())){
+		 if((txtLoginUser.getText().equals("")) || (txtLoginPass.getText().equals("")))  {
+			 Alert alert = new Alert(Alert.AlertType.WARNING);
+	            alert.setTitle("Login Incorrect");
+	            alert.setHeaderText("Hey!, Look");
+	            alert.setContentText("Please fill all the blanks");
+	            alert.showAndWait();
+		 }
+		 
+		 else if(classroom.access(txtLoginUser.getText(),txtLoginPass.getText())){
 		 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("account-list.fxml"));
 	    	
 	    	fxmlLoader.setController(this);
@@ -126,6 +140,12 @@ public class ClassRoomGUI {
 	    	LabGenericUser.setText(txtLoginUser.getText());
 	    	mainPane.getChildren().setAll(logInPane);	    	
 	    	initializeTableView();
+	    	}else {
+	    		 Alert alert = new Alert(Alert.AlertType.ERROR);
+	             alert.setTitle("Login Incorrect");
+	             alert.setHeaderText("Hey!, Look");
+	             alert.setContentText("Check your username and password or sign you in!");
+	             alert.showAndWait();
 	    	}
 		 }
 	    
@@ -161,7 +181,7 @@ public class ClassRoomGUI {
 	    }
 	 
 	 @FXML
-	    public void createAccount(ActionEvent event) throws IOException  {
+	    public void createAccount(ActionEvent event) throws IOException  { //method that creates a new user!.
 		 String user,pass,gender,career,bDay,newBrowser;
 		 
 		 user = txtUserN.getText();
@@ -210,9 +230,9 @@ public class ClassRoomGUI {
 	    		classroom.addAccount(user,pass,gender,career,bDay,newBrowser,img);
 	        	//System.out.println(pass);
 	            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-	            alert.setTitle("Done");
+	            alert.setTitle("Account Created");
 	            alert.setHeaderText("New User");
-	            alert.setContentText("The new account has been created!");
+	            alert.setContentText("The new account has been created with successful!");
 	            alert.showAndWait();
 
 	        }
@@ -221,7 +241,7 @@ public class ClassRoomGUI {
 		 
 	    }
 		 	 
-	 public void initializeTableView() {
+	 public void initializeTableView() { //initialize the table view.
 	 ObservableList<UserAccount> observableList;
 	   	observableList = FXCollections.observableArrayList(classroom.getAccounts());
 	   	

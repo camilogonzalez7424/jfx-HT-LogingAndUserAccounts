@@ -18,8 +18,8 @@
         <columns>
           <TableColumn fx:id="tcUserName" prefWidth="103.0" text="Username" />
           <TableColumn fx:id="tcGender" prefWidth="95.0" text="Gender" />
-            <TableColumn fx:id="tcCareer" prefWidth="178.0" text="Career" />
-            <TableColumn fx:id="tcBirthday" minWidth="5.0" prefWidth="82.0" text="Birthday" />
+            <TableColumn fx:id="tcCareer" prefWidth="164.0" text="Career" />
+            <TableColumn fx:id="tcBirthday" minWidth="5.0" prefWidth="96.0" text="Birthday" />
             <TableColumn fx:id="tcBrowser" prefWidth="141.0" text="Browser" />
         </columns>
       </TableView>
@@ -41,8 +41,8 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <Button mnemonicParsing="false" onAction="#LogOut" text="Log out" GridPane.columnIndex="2" />
-            <ImageView fx:id="IvUser" fitHeight="74.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#LogOut" style="-fx-background-color: #33FFF0;" text="Log out" GridPane.columnIndex="2" />
+            <ImageView fx:id="IvUser" fitHeight="74.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
             <Label fx:id="LabGenericUser" text="genericUser" textAlignment="CENTER">
                <GridPane.margin>
                   <Insets left="100.0" />

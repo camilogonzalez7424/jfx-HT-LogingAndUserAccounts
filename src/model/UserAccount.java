@@ -14,6 +14,8 @@ public class UserAccount {
 	private String browser;
 	private Image profile;
 	
+	//Constructor.
+	
 	public UserAccount(String userName, String password, String gender, String career, String birthday, String browser,Image profile) {
 		this.userName = userName;
 		this.password = password;
